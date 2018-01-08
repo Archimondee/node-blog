@@ -15,5 +15,12 @@
   "bugs": {
     "url": "https://github.com/archimondee/node-blog/issues"
   },
-  "homepage": "https://github.com/archimondee/node-blog#readme"
+  "homepage": "https://github.com/archimondee/node-blog#readme",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "express": "^4.16.2",
+    "express-handlebars": "^3.0.0",
+    "express-session": "^1.15.6",
+    "mongoose": "^5.0.0-rc0"
+  }
 }
