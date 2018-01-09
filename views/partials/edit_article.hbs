@@ -1,0 +1,17 @@
+<h1>{{title}}</h1>
+<form action="/articles/edit/{{article._id}}" method="post">
+    <div id="form-group">
+        <label for="">Title</label>
+        <input type="text" name='title' class="form-control" value={{article.title}}>
+    </div>
+    <div id="form-group">
+        <label for="">Author</label>
+        <input type="text" name='author' class="form-control" value={{article.author}}>
+    </div>
+    <div id="form-group">
+        <label for="">Body</label>
+        <textarea name="body" id="" class="form-control">{{article.body}}</textarea>
+    </div>
+    <br>
+    <input type="submit" value="Submit" class="btn btn-primary">
+</form>

@@ -1,3 +1,6 @@
 <h1>{{article.title}}</h1>
 <h5>Writen by {{article.author}}</h5>
 <p>{{article.body}}</p>
+<hr>
+<a href="/articles/edit/{{article._id}}" class="btn btn-default">Edit</a>
+<a href="#" class="btn btn-danger delete-article" data-id={{article._id}}>Delete</a>
