@@ -65,6 +65,14 @@ app.post('/articles/add', function(req, res){
     });
 });
 
+app.get('/articles/:id', function(req, res){
+    Article.findById(req.params.id, function(err, article){
+        res.render('./partials/article.hbs', {
+            article: article
+        });
+    });
+});
+
 app.listen(3000, function(){
     console.log('Server started on port 3000');
 });
