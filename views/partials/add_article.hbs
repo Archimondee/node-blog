@@ -1,3 +1,10 @@
+{{#if errors}}
+    {{#each errors}}
+        <div class="div alert alert-danger">
+            <p> {{this.msg}}</p>
+        </div>
+    {{/each}}
+{{/if}}
 <h1>{{title}}</h1>
 <form action="/articles/add" method="post">
     <div class="form-group">

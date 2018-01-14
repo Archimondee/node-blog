@@ -1,3 +1,8 @@
+{{#if expressFlash}}
+    <div class="alert alert-success">
+        <p>{{expressFlash}}</p> 
+    </div>
+{{/if}}
 <h1>{{title}}</h1>
 <ul class="list-group">
     {{#each article}}
