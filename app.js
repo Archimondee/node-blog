@@ -79,7 +79,9 @@ app.all('/', function(req, res){
 })
 
 let articles = require('./routes/articles');
+let user = require('./routes/user');
 app.use('/articles', articles);
+app.use('/users', user);
 
 app.listen(3000, function(){
     console.log('Server started on port 3000');

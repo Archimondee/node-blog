@@ -1,0 +1,32 @@
+{{#if errors}}
+    {{#each errors}}
+        <div class="div alert alert-danger">
+            <p> {{this.msg}}</p>
+        </div>
+    {{/each}}
+{{/if}}
+<h1>Register</h1>
+<form action="/users/register" method="post">
+    <div id="form-group">
+        <label for="">Name</label>
+        <input name="name" type="text" class="form-control">
+    </div>
+    <div id="form-group">
+        <label for="">Email</label>
+        <input name="email" type="text" class="form-control">
+    </div>
+    <div id="form-group">
+        <label for="">Username</label>
+        <input name="username" type="text" class="form-control">
+    </div>
+    <div id="form-group">
+        <label for="">Password</label>
+        <input name="password" type="password" class="form-control">
+    </div>
+    <div id="form-group">
+        <label for="">Confirm Password</label>
+        <input name="password2" type="password" class="form-control">
+    </div>
+    <br>
+    <input type="submit" value="Submit" class="btn btn-primary">
+</form>

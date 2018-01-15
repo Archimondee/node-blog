@@ -1,0 +1,17 @@
+{{#if expressFlash}}
+    <div class="alert alert-success">
+        <p>{{expressFlash}}</p> 
+    </div>
+{{/if}}
+<h1>Login</h1>
+<form action="/users/login" method="post">
+    <div id="form-group">
+        <label for="">Username</label>
+        <input name="username" type="text" class="form-control">
+    </div>
+    <div id="form-group">
+        <label for="">Password</label>
+        <input name="password" type="password" class="form-control">
+    </div>
+    <input type="submit" value="Submit" class="btn btn-primary">
+</form>
