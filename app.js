@@ -5,12 +5,14 @@ const mongoose = require('mongoose');
 const session = require('express-session');
 const bodyParser = require('body-parser');
 const expressValidator = require('express-validator');
+const config = require('./config/database');
 var flash = require('express-flash');
+const passport = require('passport');
 
 let Article = require('./models/article');
 const app = express();
 var sessionStore = new session.MemoryStore;
-mongoose.connect('mongodb://localhost/blogger');
+mongoose.connect(config.database);
 let db = mongoose.connection;
 
 db.once('open',()=>{
@@ -35,6 +37,11 @@ app.use(session({
     store: sessionStore
 }));
 
+// passport config middleware
+require('./config/passport')(passport);
+app.use(passport.initialize());
+app.use(passport.session());
+
 app.use(function(req, res, next){
     res.locals.sessionFlash = [];
     next();
@@ -57,7 +64,15 @@ app.use(expressValidator({
       };
     }
   }));
+
+
+
 app.use(express.static(path.join(__dirname, 'public')));
+
+app.get('*', function(req, res, next){
+    res.locals.user = req.user || null;
+    next();
+})
 
 app.get('/', function(req, res){
     Article.find({}, function(err, articles){
